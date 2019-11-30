@@ -26,8 +26,9 @@ namespace ozilab7
                 encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
                 textBox3.Text = ByteConverter.GetString(encryptedData);
                 var p = RSA.ExportParameters(true);
-                textBox2.Text = "Текущий размер ключа:" + RSA.KeySize.ToString() + " Модуль:" + p.Modulus[0].ToString() + " Показатель степени:" + p.Exponent[0].ToString();               
-                textBox6.Text = RSA.LegalKeySizes[0].MinSize.ToString() + "..." + RSA.LegalKeySizes[0].MaxSize.ToString();
+                textBox2.Text = "Текущий размер ключа:" + RSA.KeySize.ToString();
+                //+ " Модуль:" + p.Modulus[0].ToString() + " Показатель степени:" + p.Exponent[0].ToString();               
+                //textBox6.Text = RSA.LegalKeySizes[0].MinSize.ToString() + "..." + RSA.LegalKeySizes[0].MaxSize.ToString();
             }
             catch (ArgumentNullException)
             { 
@@ -41,7 +42,7 @@ namespace ozilab7
             decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
             textBox5.Text = ByteConverter.GetString(decryptedData);
             var p = RSA.ExportParameters(true);
-            textBox4.Text = "P:" + p.P[0].ToString() + " Q:" + p.Q[0].ToString() + " N:" + p.Modulus[0].ToString() + " d:" + p.D[0].ToString();
+            //textBox4.Text = "P:" + p.P[0].ToString() + " Q:" + p.Q[0].ToString() + " N:" + p.Modulus[0].ToString() + " d:" + p.D[0].ToString();
         }
 
 
@@ -50,7 +51,8 @@ namespace ozilab7
             try
             {
                 CspParameters cspParams = new CspParameters();
-                cspParams.KeyContainerName = ContainerName;               
+                cspParams.Flags = CspProviderFlags.UseMachineKeyStore; //информация о ключах будет считываться из контейнера ключей компьютера.
+                                cspParams.KeyContainerName = ContainerName;               
                 return cspParams;
             }
             catch(CryptographicException e)
