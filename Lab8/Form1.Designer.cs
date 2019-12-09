@@ -61,13 +61,13 @@
             this.infoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.infoTextBox.Multiline = true;
             this.infoTextBox.Name = "infoTextBox";
-            this.infoTextBox.Size = new System.Drawing.Size(420, 56);
+            this.infoTextBox.Size = new System.Drawing.Size(420, 88);
             this.infoTextBox.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 360);
+            this.label3.Location = new System.Drawing.Point(26, 392);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 17);
@@ -146,7 +146,7 @@
             // 
             // signTextBox
             // 
-            this.signTextBox.Location = new System.Drawing.Point(73, 292);
+            this.signTextBox.Location = new System.Drawing.Point(72, 324);
             this.signTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.signTextBox.Multiline = true;
             this.signTextBox.Name = "signTextBox";

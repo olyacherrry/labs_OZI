@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//в машинном контейнере ключей, размер ключей в битах 2048 5 вар
 
 namespace ozilab7
 {
@@ -15,7 +16,7 @@ namespace ozilab7
 
         public byte[] encryptedData;
         public byte[] decryptedData;
-        RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048, RSAPersistKeyInCsp("KeyContainer"));
+        RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048, RSAPersistKeyInCsp("MachineKeyStore"));
         UnicodeEncoding ByteConverter = new UnicodeEncoding();
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,8 +27,8 @@ namespace ozilab7
                 encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
                 textBox3.Text = ByteConverter.GetString(encryptedData);
                 var p = RSA.ExportParameters(true);
-                textBox2.Text = "Текущий размер ключа:" + RSA.KeySize.ToString();
-                //+ " Модуль:" + p.Modulus[0].ToString() + " Показатель степени:" + p.Exponent[0].ToString();               
+                textBox2.Text = "Текущий размер ключа:" + RSA.KeySize.ToString()
+                +" Модуль:" + p.Modulus[0].ToString() + " Показатель степени:" + p.Exponent[0].ToString();
                 //textBox6.Text = RSA.LegalKeySizes[0].MinSize.ToString() + "..." + RSA.LegalKeySizes[0].MaxSize.ToString();
             }
             catch (ArgumentNullException)
@@ -42,7 +43,7 @@ namespace ozilab7
             decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
             textBox5.Text = ByteConverter.GetString(decryptedData);
             var p = RSA.ExportParameters(true);
-            //textBox4.Text = "P:" + p.P[0].ToString() + " Q:" + p.Q[0].ToString() + " N:" + p.Modulus[0].ToString() + " d:" + p.D[0].ToString();
+            textBox2.Text += "\n  P:" + p.P[0].ToString() + " Q:" + p.Q[0].ToString() + " N:" + p.Modulus[0].ToString() + " d:" + p.D[0].ToString(); //параметры алгоритма rsa 
         }
 
 
@@ -68,7 +69,7 @@ namespace ozilab7
             {
                 byte[] encryptedData;
 
-                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048, RSAPersistKeyInCsp("KeyContainer")))
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider(2048, RSAPersistKeyInCsp("MachineKeyStore")))
                 {
                     RSA.ImportParameters(RSAKeyInfo);
                     encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);                  

@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab5_AES", "LR5_AES\Lab5_AES.csproj", "{80C7E24A-3FBD-431A-8A45-0811999AAC65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4WF", "..\LabsCS-master\Lab4WF\Lab4WF.csproj", "{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2MagicSquares", "MagicSquares\MagicSquares\Lab2MagicSquares.csproj", "{93F66908-ED9E-49E5-B165-A6412F1B5EBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3\Lab3.csproj", "{30179EC5-3283-43E0-826C-B665677E4A49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_SDES", "Lab3\Lab3\Lab3_SDES.csproj", "{30179EC5-3283-43E0-826C-B665677E4A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab7", "ozilab7\Lab7.csproj", "{5BBEFE2A-9687-434D-B1A4-6400F610AE2F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab7_RSA", "ozilab7\Lab7_RSA.csproj", "{5BBEFE2A-9687-434D-B1A4-6400F610AE2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab8", "Lab8\Lab8.csproj", "{35FD5E71-8B8E-4720-BF22-554210B0BC1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab8_digitalSignature", "Lab8\Lab8_digitalSignature.csproj", "{35FD5E71-8B8E-4720-BF22-554210B0BC1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4WF", "Lab4WF\Lab4WF.csproj", "{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{80C7E24A-3FBD-431A-8A45-0811999AAC65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80C7E24A-3FBD-431A-8A45-0811999AAC65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80C7E24A-3FBD-431A-8A45-0811999AAC65}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93F66908-ED9E-49E5-B165-A6412F1B5EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93F66908-ED9E-49E5-B165-A6412F1B5EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93F66908-ED9E-49E5-B165-A6412F1B5EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{35FD5E71-8B8E-4720-BF22-554210B0BC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35FD5E71-8B8E-4720-BF22-554210B0BC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35FD5E71-8B8E-4720-BF22-554210B0BC1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

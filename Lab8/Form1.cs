@@ -53,6 +53,7 @@ namespace Lab8
                     textBox.Text += "Keysize{i} min, max, step: " + legalKeySizes[i].MinSize + " " + legalKeySizes[i].MaxSize + " " + legalKeySizes[i].SkipSize + " bits" + Environment.NewLine;
                 }
             }
+            textBox.Text += "Verified? - " + mySign.VerifyHash(hash, signature);
         }
 
         private String ToHexString(byte[] array)
