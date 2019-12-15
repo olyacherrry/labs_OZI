@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab7_RSA", "ozilab7\Lab7_RS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab8_digitalSignature", "Lab8\Lab8_digitalSignature.csproj", "{35FD5E71-8B8E-4720-BF22-554210B0BC1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4WF", "Lab4WF\Lab4WF.csproj", "{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab4CTR", "Lab4WF\Lab4CTR.csproj", "{0E358F17-DA29-4FB8-939D-F2BA7CBB9D62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

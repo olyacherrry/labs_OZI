@@ -30,12 +30,12 @@ namespace Lab8
 
         private void signButton_Click(object sender, EventArgs e)
         {
-            hash = mySign.ComputeHash(Encoding.UTF8.GetBytes(textBox.Text.ToString()));
+            hash = mySign.ComputeHash(Encoding.UTF8.GetBytes(textBox.Text.ToString()));//Сгенерировать хеш-код исходного сообщения.
             //infoTextBox.Text = hash.ToString();
             hashTextBox.Text = ToHexString(hash);
-            signature = mySign.SignHash(hash);
+            signature = mySign.SignHash(hash);//Вычисляет подпись для заданного значения хеша
             signTextBox.Text = ToString(signature);
-            rsaParameters = mySign.ExportParameters(false);
+            rsaParameters = mySign.ExportParameters(false);//Экспортирует параметры RSA в объект rsaParameters
             ShowInfo(infoTextBox);
         }
 
@@ -53,7 +53,8 @@ namespace Lab8
                     textBox.Text += "Keysize{i} min, max, step: " + legalKeySizes[i].MinSize + " " + legalKeySizes[i].MaxSize + " " + legalKeySizes[i].SkipSize + " bits" + Environment.NewLine;
                 }
             }
-            textBox.Text += "Verified? - " + mySign.VerifyHash(hash, signature);
+            textBox.Text += "Verified? - " + mySign.VerifyHash(hash, signature);//Верифицирует заданную подпись, сравнивая ее с подписью,
+            //вычисленной для заданного сообщения
         }
 
         private String ToHexString(byte[] array)

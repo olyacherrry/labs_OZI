@@ -27,8 +27,7 @@ namespace ozilab7
                 encryptedData = RSAEncrypt(dataToEncrypt, RSA.ExportParameters(false), false);
                 textBox3.Text = ByteConverter.GetString(encryptedData);
                 var p = RSA.ExportParameters(true);
-                textBox2.Text = "Текущий размер ключа:" + RSA.KeySize.ToString()
-                +" Модуль:" + p.Modulus[0].ToString() + " Показатель степени:" + p.Exponent[0].ToString();
+                textBox2.Text = "Текущий размер ключа:" + RSA.KeySize.ToString() +" Модуль:" + p.Modulus[0].ToString() + " Показатель степени:" + p.Exponent[0].ToString();
                 //textBox6.Text = RSA.LegalKeySizes[0].MinSize.ToString() + "..." + RSA.LegalKeySizes[0].MaxSize.ToString();
             }
             catch (ArgumentNullException)
@@ -43,7 +42,36 @@ namespace ozilab7
             decryptedData = RSADecrypt(encryptedData, RSA.ExportParameters(true), false);
             textBox5.Text = ByteConverter.GetString(decryptedData);
             var p = RSA.ExportParameters(true);
-            textBox2.Text += "\n  P:" + p.P[0].ToString() + " Q:" + p.Q[0].ToString() + " N:" + p.Modulus[0].ToString() + " d:" + p.D[0].ToString(); //параметры алгоритма rsa 
+            //textBox2.Text += "\n  P:" + p.P[0].ToString() + " Q:" + p.Q[0].ToString() + " N:" + p.Modulus[0].ToString() + " d:" + p.D[0].ToString(); //параметры алгоритма rsa 
+            /*textBox2.Text += p.P.LongLength;
+            textBox2.Text += p.P.Length;*/
+            textBox2.Text += " P: ";
+            for(int i = 0; i < 50; i++)
+            {
+                textBox2.Text += p.P[i];
+            }
+            textBox2.Text += " Q: ";
+            for (int i = 0; i < 50; i++)
+            {
+                textBox2.Text += p.Q[i];
+            }
+            textBox2.Text += " N: ";
+            for (int i = 0; i < 50; i++)
+            {
+                textBox2.Text += p.Modulus[i];
+            }
+
+            textBox2.Text += " e: ";
+            for (int i = 0; i < p.Exponent.Length; i++)
+            {
+                textBox2.Text += p.Exponent[i];
+            }
+            
+            textBox2.Text += "d: ";
+            for (int i = 0; i < 50; i++)
+            {
+                textBox2.Text += p.D[i];
+            }
         }
 
 
