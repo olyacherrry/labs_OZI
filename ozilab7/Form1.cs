@@ -72,6 +72,7 @@ namespace ozilab7
             {
                 textBox2.Text += p.D[i];
             }
+            textBox2.Text += "length "+  p.P.Length;
         }
 
 

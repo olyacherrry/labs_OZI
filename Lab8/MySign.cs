@@ -44,6 +44,10 @@ namespace Lab8
         public Boolean VerifyHash(Byte[] hash, Byte[] signature) //Верифицирует заданную подпись, сравнивая ее с подписью,вычисленной для заданного хеша
         {
             return asymmetricAlgorithm.VerifyHash(hash, CryptoConfig.MapNameToOID(hashAlgorithmName), signature);
+            //Для передачи информации между методами создания и верификации подписи используются три параметра:
+            //1) text–строка, содержащая исходный текст сообщения.
+            //2) RSAParametersrsaparams - объект, инкапсулирующий информацию открытого ключа.
+            //3) byte[] signaturebytes – массив, содержащий цифровую подпись сообщения.
         }
 
         public Int32 GetKeySize()

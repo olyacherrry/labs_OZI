@@ -33,9 +33,9 @@ namespace Lab8
             hash = mySign.ComputeHash(Encoding.UTF8.GetBytes(textBox.Text.ToString()));//Сгенерировать хеш-код исходного сообщения.
             //infoTextBox.Text = hash.ToString();
             hashTextBox.Text = ToHexString(hash);
-            signature = mySign.SignHash(hash);//Вычисляет подпись для заданного значения хеша
+            signature = mySign.SignHash(hash);//Вычисляет подпись для заданного значения хеша, Зашифровать хеш-кодличным ключом отправителя.
             signTextBox.Text = ToString(signature);
-            rsaParameters = mySign.ExportParameters(false);//Экспортирует параметры RSA в объект rsaParameters
+            rsaParameters = mySign.ExportParameters(false);//Экспортирует параметры RSA в объект rsaParameters (извлекает открытый ключ, необходимый для верификации)
             ShowInfo(infoTextBox);
         }
 
@@ -54,7 +54,7 @@ namespace Lab8
                 }
             }
             textBox.Text += "Verified? - " + mySign.VerifyHash(hash, signature);//Верифицирует заданную подпись, сравнивая ее с подписью,
-            //вычисленной для заданного сообщения
+            //вычисленной для заданного сообщения параметры -хеш код и идентификатор OID алгоритма хеширования SHA
         }
 
         private String ToHexString(byte[] array)
